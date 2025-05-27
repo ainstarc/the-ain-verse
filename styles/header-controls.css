@@ -1,58 +1,62 @@
 /* Header Controls Grouping */
 .header-controls {
-  display: flex;
-  align-items: center;
-  gap: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
 #theme-toggle {
-  background: transparent;
-  border: 1px solid var(--card-border-color);
-  color: var(--text-color);
-  padding: 0;
-  font-size: 1.4em;
-  border-radius: 50%;
-  cursor: pointer;
-  width: 44px;
-  height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 1;
-  transition: background-color 0.3s ease, color 0.3s ease,
-    border-color 0.3s ease, transform 0.2s ease;
+    background: transparent;
+    border: 1px solid var(--card-border-color);
+    color: var(--text-color);
+    padding: 0;
+    font-size: 1.4em;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    transition: background-color 0.3s ease, color 0.3s ease,
+        border-color 0.3s ease, transform 0.2s ease;
 }
 
 #theme-toggle:focus-visible {
-  outline: 2px solid var(--focus-outline-color);
-  outline-offset: 3px;
+    outline: 2px solid var(--focus-outline-color);
+    outline-offset: 3px;
 }
 
 #theme-toggle:hover,
 #theme-toggle:focus {
-  background-color: var(--topic-bg-color);
-  color: var(--link-hover-color);
-  border-color: var(--button-hover-border-color);
-  transform: translateY(-1px) scale(1.05);
+    background-color: var(--topic-bg-color);
+    color: var(--link-hover-color);
+    border-color: var(--button-hover-border-color);
+    transform: translateY(-1px) scale(1.05);
 }
 
 .social-links {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 .social-links a {
-  color: var(--text-color);
-  font-size: 1.5em;
-  margin-left: 15px;
-  text-decoration: none;
-  transition: color 0.3s ease, transform 0.2s ease;
+    color: var(--text-color);
+    font-size: 1.5em;
+    margin-left: 15px;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.2s ease;
 }
 .social-links a:hover,
 .social-links a:focus {
-  color: var(--link-hover-color);
-  transform: translateY(-2px);
+    color: var(--link-hover-color);
+    transform: translateY(-2px);
 }
 .social-links a:focus-visible {
-  outline: 2px solid var(--focus-outline-color);
-  outline-offset: 2px;
+    outline: 2px solid var(--focus-outline-color);
+    outline-offset: 2px;
+}
+
+.social-links a.hide {
+    display: none;
 }

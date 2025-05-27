@@ -397,7 +397,6 @@ export async function fetchInitialRepos() {
     statusDiv.textContent = "🔄 Loading projects...";
     statusDiv.style.color = ""; // Reset color
     repoListDiv.innerHTML = ""; // Clear list while loading
-    console.log(API_URL);
 
     try {
         const response = await fetch(API_URL, {
