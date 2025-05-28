@@ -32,11 +32,10 @@
   top: 50%; /* Vertically center the tab */
   transform: translateY(-50%); /* Fine-tune vertical centering */
   width: var(--live-issues-tab-width);
-  min-height: 120px; /* Example height for the tab, adjust as needed */
+  min-height: 100px; /* Example height for the tab, adjust as needed */
   padding: 10px 0; /* Vertical padding for text/icon inside */
   background-color: var(--live-issues-toggle-bg);
   color: var(--live-issues-toggle-text-color);
-  border: none;
   /* Rounded corners on the right side for a tab effect */
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
@@ -49,6 +48,7 @@
   box-shadow: 2px 0 5px var(--live-issues-toggle-shadow-color);
   z-index: 1001; /* Ensure it's above the sidebar when closed, or just generally high */
   line-height: 1.2; /* Adjust for better vertical text appearance */
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 #live-issues-toggle i {
@@ -57,6 +57,17 @@
   transform: rotate(
     -90deg
   ); /* Adjust rotation if icon is not oriented correctly */
+}
+
+#live-issues-toggle:hover,
+#live-issues-toggle:focus {
+  background-color: var(--live-issues-toggle-bg-hover); /* Use specific toggle hover color */
+  box-shadow: 3px 0 7px var(--live-issues-toggle-shadow-color); /* Enhanced shadow */
+}
+
+#live-issues-toggle:focus-visible {
+  outline: 2px solid var(--focus-outline-color);
+  outline-offset: 2px; /* Ensure outline is clearly visible around the tab */
 }
 
 /* Content within the sidebar (heading and list) */
@@ -126,12 +137,16 @@
 
 /* --- Search Filter Input --- */
 .live-issues-search-container {
-  padding: 12px 15px 0 15px;
+  padding: 12px 15px 8px 15px;
   background: var(--live-issues-sidebar-bg);
   border-bottom: 1px solid var(--live-issues-item-border-color);
+  display: flex;
+  align-items: baseline; /* Align items based on their text baseline */
+  gap: 8px; /* Space between input and count */
 }
 .live-issues-search-input {
-  width: 100%;
+  flex: 4; /* Allow input to grow, but not shrink */
+  font-family: "Comfortaa", sans-serif; /* Ensure consistent font */
   padding: 6px 10px;
   font-size: 1em;
   border: 1px solid var(--live-issues-item-border-color);
@@ -140,17 +155,30 @@
   color: var(--live-issues-title-text-color);
   outline: none;
   box-sizing: border-box;
-  margin-bottom: 4px;
 }
 .live-issues-search-input::placeholder {
   color: var(--live-issues-placeholder-text-color);
   opacity: 0.7; /* Slightly faded placeholder */
   font-style: italic;
   font-family: "Comfortaa", sans-serif; /* Ensure consistent font */
-  font-size: 0.9em; /* Slightly smaller placeholder text */
+  font-size: 0.75em; /* Slightly smaller placeholder text */
 }
 .live-issues-search-input:focus {
   border-color: var(--live-issues-title-text-color);
+}
+
+.live-issues-search-count {
+  flex: 1; /* Allow count to take up remaining space */
+  font-family: "Comfortaa", sans-serif; /* Ensure consistent font */
+  font-size: 0.9em;
+  font-weight: bolder;
+  color: var(--live-issues-search-count-text-color);
+  padding: 4px 8px;
+  background: var(--live-issues-sidebar-bg);
+  box-sizing: border-box; /* Include padding in width/height */
+  text-align: center; /* Center the text within its allocated space */
+  border-radius: 4px; /* Rounded corners for a pill/badge effect */
+  white-space: nowrap;
 }
 
 /* --- Repository Group Header --- */

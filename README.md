@@ -16,6 +16,14 @@ Welcome to the Ain-Verse! This is a dynamic, interactive single-page application
   - Idle state: If not interacted with, the cat "goes to sleep" (💤 emoji).
 - **GitHub Pages Preview Modal:** Click on a repository card (if it has GitHub Pages) to view a live preview in a large modal iframe.
 - **Modular JavaScript & CSS:** Code is organized into modules for better maintainability.
+- **Live GitHub Issues Sidebar:** A toggleable sidebar that displays a consolidated list of open issues from your repositories, featuring:
+  - Search and filter capabilities for issues by keywords and labels.
+  - Grouping of issues by repository.
+  - Display of search result count for immediate feedback.
+  - Expandable and collapsible repository groups for better organization.
+  - Direct links to individual issues on GitHub.
+  - Display of issue numbers for easy reference.
+- **AI Links Section:** A dedicated section providing quick access to relevant AI tools and resources.
 - **Responsive Design:** Adapts to different screen sizes.
 - **Accessibility Considerations:** Includes ARIA labels and semantic HTML where appropriate.
 
@@ -58,6 +66,10 @@ No build steps or local server are strictly required for basic viewing, as it's 
 - **Filter Repositories:** Use the search bar (usually located above the repository list) to type and filter repositories by name, description, or topics.
 - **"Pspspsps" Cat:** Hover over or click the "pspspsps" text in the introductory paragraph to hear cat sounds and see its mood change.
 - **Repository Previews:** If a repository card has a GitHub Pages site, click on the card (not the action icons) to open a preview modal. Click the "×" button or outside the modal content to close.
+- **Live Issues Sidebar:**
+  - Click the vertical tab on the left edge of the screen (styled with an accent color, e.g., `salmon red` in light theme, `teal` in dark theme) to open/close the "Live Issues" sidebar.
+  - Use the search input within the sidebar to filter issues by keywords or labels (e.g., `bug`, `label:enhancement`).
+  - Click on repository names to expand or collapse their respective issue lists.
 
 ## 📜 Changelog
 
@@ -70,8 +82,10 @@ Keep track of notable changes and new features here. For detailed future plans a
 - 🔍 Added **Issue Search** functionality to the Live Issues sidebar, allowing filtering by keywords and labels.
 - ✨ Introduced an "AI Links" section for quick access to mentioned AI tools.
 - 🎨 Enhanced CSS styling for input field placeholders across the site for improved clarity and user experience.
+- 🎨 Refined UI for the Live Issues sidebar, including toggle button styling for improved visibility and theme consistency.
 - ↔️ Implemented expand/collapse functionality for repository groups within the Live Issues sidebar for better organization.
 - #️⃣ Displayed issue numbers directly on individual issue items in the Live Issues list for easier reference.
+- 📊 Added a search result count display to the Live Issues sidebar, providing clear feedback on filtering.
 
 ### `v0.1.2` – 2025-05-28
 

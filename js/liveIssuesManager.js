@@ -71,6 +71,9 @@ function createSearchInput() {
     renderGroupedIssues();
   });
   searchDiv.appendChild(input);
+  const countSpan = document.createElement("span");
+  countSpan.className = "live-issues-search-count";
+  searchDiv.appendChild(countSpan);
   return searchDiv;
 }
 
@@ -100,6 +103,9 @@ function renderGroupedIssues() {
   if (!liveIssuesList) return;
   liveIssuesList.innerHTML = "";
   const filtered = filterIssues(allFetchedIssues);
+  const searchCountSpan = document.querySelector(".live-issues-search-count");
+  searchCountSpan.textContent = `${filtered.length}`;
+
   if (filtered.length === 0) {
     liveIssuesList.innerHTML = "<li>No issues match your filter.</li>";
     return;

@@ -21,6 +21,7 @@
   --card-shadow-hover: 0 6px 12px rgba(0, 0, 0, 0.1);
   --focus-outline-color: var(--link-color);
   --accent-color: #00796b;
+  --accent-hover-color: #004D40; /* Darker shade of accent for hover */
   --accent-color-translucent: rgba(0, 121, 107, 0.3);
   --text-secondary-color: #55575a;
   --button-hover-border-color: var(--link-hover-color);
@@ -36,18 +37,21 @@
   --border-radius-large: 12px;
 
   --live-issues-sidebar-width: 300px; /* Total width of the sidebar when open */
-  --live-issues-tab-width: 40px; /* Width of the clickable tab */
+  --live-issues-tab-width: 36px; /* Slightly reduced width of the clickable tab */
   --live-issues-sidebar-bg: var(--card-bg-color);
   --live-issues-sidebar-border-color: var(--card-border-color);
   --live-issues-sidebar-shadow-color: rgba(0, 0, 0, 0.1);
-  --live-issues-toggle-bg: var(--link-color);
-  --live-issues-toggle-text-color: var(--button-text-color);
+  --live-issues-toggle-bg: #FF6B6B; /* Using salmon red for light theme toggle */
+  --live-issues-toggle-text-color: var(--button-text-color); /* White text for good contrast on dark accent */
+  --live-issues-toggle-bg-hover: #E05A5A; /* Darker salmon red for hover in light theme */
   --live-issues-toggle-shadow-color: rgba(0, 0, 0, 0.15);
   --live-issues-item-border-color: var(--card-border-color);
   --live-issues-title-text-color: var(--text-color);
   --live-issues-repo-name-text-color: var(--text-secondary-color);
   --live-issues-label-bg-color: var(--topic-bg-color);
   --live-issues-label-text-color: var(--topic-text-color);
+  --live-issues-placeholder-text-color: var(--text-secondary-color); /* For sidebar search placeholder */
+  --live-issues-search-count-text-color: var(--text-color); /* For sidebar search result count */
 }
 
 body.dark-theme {
@@ -69,6 +73,7 @@ body.dark-theme {
   --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   --card-shadow-hover: 0 6px 12px rgba(0, 0, 0, 0.25);
   --accent-color: #4db6ac;
+  --accent-hover-color: #80cbc4; /* Lighter shade of accent for hover, maintains contrast with dark text */
   --text-secondary-color: #a0a0a0;
   --cat-mood-angry-color: #ef5350;
   --cat-mood-playful-color: #ffa726;
@@ -77,14 +82,15 @@ body.dark-theme {
   --live-issues-sidebar-bg: var(--card-bg-color);
   --live-issues-sidebar-border-color: var(--card-border-color);
   --live-issues-sidebar-shadow-color: rgba(0, 0, 0, 0.25);
-  --live-issues-toggle-bg: var(--link-color);
-  --live-issues-toggle-text-color: var(
-    --text-color
-  ); /* Using global text color for dark theme toggle for good contrast */
+  --live-issues-toggle-bg: var(--accent-color); /* Using site's accent color */
+  --live-issues-toggle-text-color: #212529; /* Dark text for good contrast on light accent in dark theme */
+  --live-issues-toggle-bg-hover: var(--accent-hover-color); /* Use dark theme's accent hover color */
   --live-issues-toggle-shadow-color: rgba(0, 0, 0, 0.3);
   --live-issues-item-border-color: var(--card-border-color);
   --live-issues-title-text-color: var(--text-color);
   --live-issues-repo-name-text-color: var(--text-secondary-color);
   --live-issues-label-bg-color: var(--topic-bg-color);
   --live-issues-label-text-color: var(--topic-text-color);
+  --live-issues-placeholder-text-color: var(--text-secondary-color); /* For sidebar search placeholder */
+  --live-issues-search-count-text-color: var(--text-color); /* For sidebar search result count */
 }
