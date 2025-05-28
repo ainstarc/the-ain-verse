@@ -1,7 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap");
 
 body {
-  font-family: 'Comfortaa', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: "Comfortaa", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
   margin: 0;
   padding: 0;
   background-color: var(--bg-color);
@@ -72,6 +73,19 @@ footer .fab {
   color: var(--accent-color);
   margin-inline: 0.2em;
   font-size: 1.05em;
+}
+
+.ai-links {
+  text-decoration: none;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: color 0.3s ease, font-weight 0.3s ease;
+}
+
+.ai-links:hover,
+.ai-links:focus {
+  color: var(--link-hover-color);
+  font-weight: bold;
 }
 
 /* Screen-reader only class */

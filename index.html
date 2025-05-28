@@ -1,202 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1"
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Welcome to the Ain-Verse! Explore Ain's GitHub projects, thoughts, and a touch of cat-inspired fun. Discover coding experiments and more."
+    />
+    <link rel="icon" href="svg/cat.svg" type="image/svg+xml" />
+    <title>The Awesome Ain-Verse!</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Enter the Ain-Verse</h1>
+      <div class="header-controls">
+        <nav class="social-links" aria-label="Social media links">
+          <a
+            id="github-social"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+          <a
+            id="instagram-social"
+            class="hide"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a
+            id="youtube-social"
+            class="hide"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="YouTube"
+          >
+            <i class="fab fa-youtube"></i>
+          </a>
+          <a
+            id="twitter-social"
+            class="hide"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Twitter"
+          >
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a
+            id="discord-social"
+            class="hide"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Discord"
+          >
+            <i class="fab fa-discord"></i>
+          </a>
+        </nav>
+        <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+      </div>
+    </header>
+
+    <section class="intro">
+      <p>
+        Hey there! Welcome to the Ain-Verse — my digital playground where ideas
+        multiply faster than I can finish them, tabs are always way too many,
+        and the code is as unpredictable as a cat&#8217;s mood. Most of this
+        magic happens thanks to my “love interests” — <a class="ai-links" href="https://openai.com/chatgpt">ChatGPT</a> and
+         <a class="ai-links" href="https://github.com/features/copilot">Copilot</a> — who
+        I&#8217;m constantly tweaking, bossing around, and blaming when things
+        go sideways.
+      </p>
+      <p>
+        Dive in, explore my projects, catch the socials (coming soon), and
+        don&#8217;t forget to tell your cat I said
+        <em id="cat-call">pspspsps</em>
+        <span id="cat-mood-indicator">🐾</span>
+        — because everyone deserves some love.
+      </p>
+    </section>
+
+    <main>
+      <div id="status" aria-live="polite" role="status" class="status">
+        Loading...
+      </div>
+
+      <section class="repo-controls" aria-label="Repository controls">
+        <input
+          type="search"
+          id="repo-search-input"
+          placeholder="Search repositories..."
+          aria-label="Search repositories"
         />
-        <meta
-            name="description"
-            content="Welcome to the Ain-Verse! Explore Ain's GitHub projects, thoughts, and a touch of cat-inspired fun. Discover coding experiments and more."
-        />
-        <link
-            rel="icon"
-            href="svg/cat.svg"
-            type="image/svg+xml"
-        />
-        <title>The Awesome Ain-Verse!</title>
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-            integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"
-        />
-        <link
-            rel="stylesheet"
-            href="style.css"
-        />
-    </head>
+      </section>
 
-    <body>
-        <header>
-            <h1>Enter the Ain-Verse</h1>
-            <div class="header-controls">
-                <nav
-                    class="social-links"
-                    aria-label="Social media links"
-                >
-                    <a
-                        id="github-social"
-                        href="#"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="GitHub"
-                    >
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a
-                        id="instagram-social"
-                        class="hide"
-                        href="#"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Instagram"
-                    >
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a
-                        id="youtube-social"
-                        class="hide"
-                        href="#"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="YouTube"
-                    >
-                        <i class="fab fa-youtube"></i>
-                    </a>
-                    <a
-                        id="twitter-social"
-                        class="hide"
-                        href="#"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Twitter"
-                    >
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a
-                        id="discord-social"
-                        class="hide"
-                        href="#"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Discord"
-                    >
-                        <i class="fab fa-discord"></i>
-                    </a>
-                </nav>
-                <button
-                    id="theme-toggle"
-                    aria-label="Toggle dark mode"
-                >
-                    🌙
-                </button>
-            </div>
-        </header>
+      <section
+        id="repoList"
+        class="repo-container"
+        aria-live="polite"
+        aria-label="List of Ain's GitHub repositories"
+      >
+        <!-- Repositories will be injected here by script.js -->
+      </section>
+    </main>
 
-        <section class="intro">
-            <p>
-                Hey there! Welcome to the Ain-Verse — my digital playground
-                where ideas multiply faster than I can finish them, tabs are
-                always way too many, and the code is as unpredictable as a
-                cat&#8217;s mood. Most of this magic happens thanks to my “love
-                interests” — ChatGPT and Copilot — who I&#8217;m constantly
-                tweaking, bossing around, and blaming when things go sideways.
-            </p>
-            <p>
-                Dive in, explore my projects, catch the socials (coming soon),
-                and don&#8217;t forget to tell your cat I said
-                <em id="cat-call">pspspsps</em>
-                <span id="cat-mood-indicator">🐾</span>
-                — because everyone deserves some love.
-            </p>
-        </section>
+    <button
+      id="live-issues-toggle"
+      aria-expanded="false"
+      aria-controls="live-issues-section"
+    >
+      <i class="fas fa-bars"></i>
+      <!-- Or some other icon/text -->
+      <span>Toggle Issues Panel</span>
+    </button>
 
-        <main>
-            <div
-                id="status"
-                aria-live="polite"
-                role="status"
-                class="status"
-            >
-                Loading...
-            </div>
+    <aside
+      id="live-issues-section"
+      class="live-issues-sidebar"
+      aria-labelledby="live-issues-heading"
+    >
+      <h2 id="live-issues-heading" class="visually-hidden">
+        Live GitHub Issues
+      </h2>
+      <ul id="live-issues-list">
+        <!-- Issues will be loaded here -->
+      </ul>
+    </aside>
 
-            <section
-                class="repo-controls"
-                aria-label="Repository controls"
-            >
-                <input
-                    type="search"
-                    id="repo-search-input"
-                    placeholder="Search repositories..."
-                    aria-label="Search repositories"
-                />
-            </section>
+    <footer>
+      <p>
+        Made with <i class="fas fa-heart"></i>, <i class="fas fa-cat"></i>, and
+        a pinch of AI <i class="fas fa-wand-magic-sparkles"></i> magic (shoutout
+        to <a class="ai-links" href="https://openai.com/chatgpt">ChatGPT</a> &
+         <a class="ai-links" href="https://github.com/features/copilot">Copilot</a>).
+      </p>
+      <p>
+        &copy; 2025 Ain. All the <i class="fas fa-folder-open"></i> tabs are
+        still open.
+      </p>
+    </footer>
 
-            <section
-                id="repoList"
-                class="repo-container"
-                aria-live="polite"
-                aria-label="List of Ain's GitHub repositories"
-            >
-                <!-- Repositories will be injected here by script.js -->
-            </section>
-        </main>
-
-        <button
-            id="live-issues-toggle"
-            aria-expanded="false"
-            aria-controls="live-issues-section"
-        >
-            <i class="fas fa-bars"></i>
-            <!-- Or some other icon/text -->
-            <span>Toggle Issues Panel</span>
-        </button>
-
-        <aside
-            id="live-issues-section"
-            class="live-issues-sidebar"
-            aria-labelledby="live-issues-heading"
-        >
-            <!-- The toggle button might be here, or elsewhere on the page -->
-            <!-- If the main toggle is elsewhere, you might have a close button inside the sidebar -->
-
-            <h2
-                id="live-issues-heading"
-                class="visually-hidden"
-            >
-                Live GitHub Issues
-            </h2>
-            <ul id="live-issues-list">
-                <!-- Issues will be loaded here -->
-            </ul>
-        </aside>
-
-        <footer>
-            <p>
-                Made with <i class="fas fa-heart"></i>,
-                <i class="fas fa-cat"></i>, and a pinch of AI
-                <i class="fas fa-wand-magic-sparkles"></i> magic (shoutout to
-                ChatGPT & Copilot).
-            </p>
-            <p>
-                &copy; 2025 Ain. All the <i class="fas fa-folder-open"></i> tabs
-                are still open.
-            </p>
-        </footer>
-
-        <audio
-            id="cat-sound"
-            src="sounds/cat-meow-1.mp3"
-            preload="auto"
-        ></audio>
-        <script
-            type="module"
-            src="script.js"
-            defer
-        ></script>
-    </body>
+    <audio id="cat-sound" src="sounds/cat-meow-1.mp3" preload="auto"></audio>
+    <script type="module" src="script.js" defer></script>
+  </body>
 </html>

@@ -65,6 +65,14 @@ Keep track of notable changes and new features here. For detailed future plans a
 
 ---
 
+### `v0.1.3` – 2025-05-29
+
+- 🔍 Added **Issue Search** functionality to the Live Issues sidebar, allowing filtering by keywords and labels.
+- ✨ Introduced an "AI Links" section for quick access to mentioned AI tools.
+- 🎨 Enhanced CSS styling for input field placeholders across the site for improved clarity and user experience.
+- ↔️ Implemented expand/collapse functionality for repository groups within the Live Issues sidebar for better organization.
+- #️⃣ Displayed issue numbers directly on individual issue items in the Live Issues list for easier reference.
+
 ### `v0.1.2` – 2025-05-28
 
 - 🔗 Added social media links to the website
