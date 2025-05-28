@@ -65,6 +65,12 @@ Keep track of notable changes and new features here. For detailed future plans a
 
 ---
 
+### `v0.1.2` – 2025-05-28
+
+- 🔗 Added social media links to the website
+- 🧹 Removed unnecessary package.json and package-lock.json
+- 🙌 Contribution by @hugolopez-online
+
 ### `v0.1.1` – 2025-05-25
 
 - 🔍 Added **repo search** functionality
@@ -77,7 +83,6 @@ Keep track of notable changes and new features here. For detailed future plans a
 - 📚 Expanded **documentation and inline comments**
 - 🚀 Set up **GitHub Pages deployment workflow**
 - 🧼 Updated `.gitignore` for cleaner version control
-
 
 ---
 
