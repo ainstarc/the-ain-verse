@@ -1,10 +1,7 @@
 import { performPreFlightChecks, repoSearchInput } from "./js/domElements.js";
 import { loadInitialTheme } from "./js/themeManager.js";
-import {
-  fetchInitialRepos,
-  handleSearch,
-  setupInteractiveCardListeners,
-} from "./js/repoManager.js";
+import { fetchInitialRepos, handleSearch } from "./js/repos/repoService.js";
+import { setupInteractiveCardListeners } from "./js/repos/repoInteractions.js";
 import { initializeCatSound } from "./js/catSoundManager.js";
 import { initializeLiveIssues } from "./js/liveIssuesManager.js";
 import { injectSocial } from "./js/socialManager.js";
