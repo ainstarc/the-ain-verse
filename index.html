@@ -132,18 +132,6 @@
       <span>Toggle Issues Panel</span>
     </button>
 
-    <aside
-      id="live-issues-section"
-      class="live-issues-sidebar"
-      aria-labelledby="live-issues-heading"
-    >
-      <h2 id="live-issues-heading" class="visually-hidden">
-        Live GitHub Issues
-      </h2>
-      <ul id="live-issues-list">
-        <!-- Issues will be loaded here -->
-      </ul>
-    </aside>
 
     <footer>
       <p>
@@ -160,5 +148,20 @@
 
     <audio id="cat-sound" src="sounds/cat-meow-1.mp3" preload="auto"></audio>
     <script type="module" src="script.js" defer></script>
+
+    <aside
+      id="live-issues-section"
+      class="live-issues-sidebar"
+      aria-labelledby="live-issues-heading"
+    >
+      <h2 id="live-issues-heading" class="visually-hidden">
+        Live GitHub Issues
+      </h2>
+      <div class="live-issues-scrollable"></div>
+      <ul id="live-issues-list">
+         <!-- Issues will be loaded here  -->
+      </ul>
+    </aside> 
+
   </body>
 </html>
