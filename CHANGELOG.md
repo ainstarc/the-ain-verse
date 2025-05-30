@@ -6,8 +6,19 @@ Keep track of notable changes and new features here. For detailed future plans a
 
 ### `v0.1.4` – 2025-05-30
 
-- 📌 Sidebar items now remain fixed correctly during page scroll. (Addresses #17, #23)
-- 🙌 Contribution by @Chandanag8197
+- 📌 Sidebar items now remain fixed correctly during page scroll. (Addresses [#17](https://github.com/your-repo/issues/17), [#23](https://github.com/your-repo/issues/23))
+- 🙌 Contribution by [@Chandanag8197](https://github.com/Chandanag8197)
+- 🛠️ Refactored `repoManager.js` into modular components for improved maintainability:
+  - `pagesPreview.js` – handles GitHub Pages preview modal logic
+  - `repoCard.js` – encapsulates repository card generation
+  - `repoDisplay.js` – manages card rendering
+  - `repoInteractions.js` – handles interactive behaviors
+  - `repoService.js` – fetches and filters GitHub repo data
+- 🐛 Fixed conflicting behavior on repo-card title click (Fixes [#9](https://github.com/your-repo/issues/9)):
+  - Title now **only redirects to the GitHub repo**
+  - Pages preview triggered from non-conflicting parts of the card
+
+---
 
 ### `v0.1.3` – 2025-05-29
 
