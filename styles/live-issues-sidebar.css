@@ -61,7 +61,9 @@
 
 #live-issues-toggle:hover,
 #live-issues-toggle:focus {
-  background-color: var(--live-issues-toggle-bg-hover); /* Use specific toggle hover color */
+  background-color: var(
+    --live-issues-toggle-bg-hover
+  ); /* Use specific toggle hover color */
   box-shadow: 3px 0 7px var(--live-issues-toggle-shadow-color); /* Enhanced shadow */
 }
 
@@ -185,12 +187,11 @@
 }
 
 .live-issues-scrollable > *:first-child {
-  
   flex: 1;
   overflow-y: auto;
   display: flex;
-  margin-top: 0 ;
-  padding-top: 0 ;
+  margin-top: 0;
+  padding-top: 0;
   flex-direction: column;
 }
 
@@ -211,24 +212,6 @@
   letter-spacing: 0.5px;
 }
 
-
-
-/* .live-issues-sidebar .sidebar-internal-close-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: var(--live-issues-toggle-bg);
-  color: var(--live-issues-toggle-text-color);
-  border: none;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  font-size: 1.2em;
-  cursor: pointer;
-  z-index: 1002;
-} */
-
-
 .live-issues-sidebar {
   position: fixed;
   top: 0;
@@ -245,7 +228,7 @@
   display: flex;
   flex-direction: column;
   position: fixed !important;
-  pointer-events: none; 
+  pointer-events: none;
   visibility: hidden;
   opacity: 0;
 }
@@ -256,4 +239,3 @@
   visibility: visible;
   opacity: 1;
 }
-
