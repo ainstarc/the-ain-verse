@@ -1,20 +1,55 @@
+import { useState, useEffect } from 'react'
 import { 
   FaStar, FaCodeBranch, FaExclamationCircle, FaGithub, 
   FaExternalLinkAlt, FaExclamationTriangle, FaJs, FaHtml5, 
-  FaCss3, FaPython, FaJava, FaPhp, FaCode
+  FaCss3, FaPython, FaJava, FaPhp, FaCode, FaExclamationCircle as FaError
 } from 'react-icons/fa'
-import { useState, useEffect } from 'react'
 import '../styles/RepoCard.css'
 
 const RepoCard = ({ repo }) => {
   const [isLongDescription, setIsLongDescription] = useState(false)
+  const [languages, setLanguages] = useState([])
+  const [isLoadingLangs, setIsLoadingLangs] = useState(false)
+  const [error, setError] = useState(null)
   
   useEffect(() => {
     // Check if description is long
     if (repo.description && repo.description.length > 120) {
       setIsLongDescription(true)
     }
-  }, [repo.description])
+    
+    // Fetch top languages
+    const fetchLanguages = async () => {
+      try {
+        setIsLoadingLangs(true)
+        setError(null)
+        const response = await fetch(repo.languages_url)
+        
+        if (!response.ok) {
+          const errorData = await response.json()
+          if (errorData.message && errorData.message.includes("API rate limit exceeded")) {
+            setError("GitHub API rate limit exceeded. Try again later.")
+          } else {
+            setError(`Error: ${errorData.message || response.statusText}`)
+          }
+          return
+        }
+        
+        const data = await response.json()
+        // Convert to array of [language, bytes] pairs and sort by bytes
+        const langArray = Object.entries(data).sort((a, b) => b[1] - a[1])
+        // Take top 3 languages
+        setLanguages(langArray.slice(0, 3))
+      } catch (error) {
+        console.error("Error fetching languages:", error)
+        setError("Failed to load languages")
+      } finally {
+        setIsLoadingLangs(false)
+      }
+    }
+    
+    fetchLanguages()
+  }, [repo.description, repo.languages_url])
   
   const formatRelativeDate = (dateString) => {
     const updateDate = new Date(dateString)
@@ -43,13 +78,13 @@ const RepoCard = ({ repo }) => {
     
     // Using only FontAwesome icons to avoid import issues
     switch(language) {
-      case 'JavaScript': return <FaJs />;
-      case 'HTML': return <FaHtml5 />;
-      case 'CSS': return <FaCss3 />;
-      case 'Python': return <FaPython />;
-      case 'Java': return <FaJava />;
-      case 'PHP': return <FaPhp />;
-      default: return <FaCode />;
+      case 'JavaScript': return <FaJs />
+      case 'HTML': return <FaHtml5 />
+      case 'CSS': return <FaCss3 />
+      case 'Python': return <FaPython />
+      case 'Java': return <FaJava />
+      case 'PHP': return <FaPhp />
+      default: return <FaCode />
     }
   }
   
@@ -123,33 +158,49 @@ const RepoCard = ({ repo }) => {
       </div>
       
       <div className="repo-footer">
-        <div className="repo-meta">
-          <div className="repo-updated">
-            {formatRelativeDate(repo.updated_at)}
-          </div>
-          {repo.language && (
-            <div 
-              className="language-circle" 
-              style={{ backgroundColor: getLanguageColor(repo.language) }}
-              title={repo.language}
-            >
-              {getLanguageIcon(repo.language)}
-            </div>
-          )}
+        <div className="repo-updated">
+          Updated {formatRelativeDate(repo.updated_at)}
         </div>
         
-        <div className="repo-stats">
-          <div className="repo-stat" title="Stars">
-            <FaStar />
-            <span>{repo.stargazers_count}</span>
+        <div className="repo-stats-container">
+          <div className="repo-languages">
+            {isLoadingLangs ? (
+              <span className="loading-languages">Loading...</span>
+            ) : error ? (
+              <span 
+                className="language-error theme-aware" 
+                title={error}
+                onClick={() => error.includes("API rate limit") && setError("API rate limit exceeded. Click for a new cat message!")}
+              >
+                <FaError /> {error.includes("API rate limit") ? "🐱 Cat Attack!" : "Error"}
+              </span>
+            ) : (
+              languages.map(([lang, bytes]) => (
+                <div 
+                  key={lang}
+                  className="language-circle" 
+                  style={{ backgroundColor: getLanguageColor(lang) }}
+                  title={`${lang}: ${Math.round(bytes / 1024)} KB`}
+                >
+                  {getLanguageIcon(lang)}
+                </div>
+              ))
+            )}
           </div>
-          <div className="repo-stat" title="Forks">
-            <FaCodeBranch />
-            <span>{repo.forks_count}</span>
-          </div>
-          <div className="repo-stat" title="Issues">
-            <FaExclamationCircle />
-            <span>{repo.open_issues_count}</span>
+          
+          <div className="repo-stats">
+            <div className="repo-stat" title="Stars">
+              <FaStar />
+              <span>{repo.stargazers_count}</span>
+            </div>
+            <div className="repo-stat" title="Forks">
+              <FaCodeBranch />
+              <span>{repo.forks_count}</span>
+            </div>
+            <div className="repo-stat" title="Issues">
+              <FaExclamationCircle />
+              <span>{repo.open_issues_count}</span>
+            </div>
           </div>
         </div>
       </div>

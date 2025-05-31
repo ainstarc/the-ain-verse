@@ -38,7 +38,95 @@ main {
   border-color: var(--accent-color);
   box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
 }
+/* API Error Message */
+.api-error-message {
+  background-color: var(--card-bg-color);
+  border: 1px solid var(--error-color, #e74c3c);
+  border-radius: var(--border-radius-default);
+  padding: 1.5rem;
+  margin: 2rem auto;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
 
-/* Live issues toggle button is now in LiveIssues.css */
+.api-error-message p {
+  color: var(--error-color, #e74c3c);
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
 
-/* Mobile styles are now in index.css */
+.api-error-message button {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius-default);
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.api-error-message button:hover {
+  background-color: var(--accent-hover-color, #2980b9);
+}
+/* Cat Invasion Styles - Theme Aware */
+.cat-invasion {
+  background-color: var(--cat-bg-color, #fff5f5);
+  border: 2px dashed var(--cat-border-color, #e74c3c);
+  animation: shake 0.5s ease-in-out infinite alternate;
+  position: relative;
+  overflow: hidden;
+}
+
+.cat-invasion h2 {
+  color: var(--cat-title-color, #e74c3c);
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.cat-invasion .cat-emoji {
+  font-size: 3rem;
+  margin: 1rem 0;
+  animation: bounce 1s ease infinite;
+}
+
+.cat-invasion button {
+  background-color: var(--cat-button-bg, #e74c3c);
+  color: var(--cat-button-text, white);
+}
+
+.cat-invasion button:hover {
+  background-color: var(--cat-button-hover, #c0392b);
+}
+
+/* Light theme cat colors */
+[data-theme="light"] .cat-invasion {
+  --cat-bg-color: #fff5f5;
+  --cat-border-color: #e74c3c;
+  --cat-title-color: #e74c3c;
+  --cat-button-bg: #e74c3c;
+  --cat-button-text: white;
+  --cat-button-hover: #c0392b;
+}
+
+/* Dark theme cat colors */
+[data-theme="dark"] .cat-invasion {
+  --cat-bg-color: #2c1517;
+  --cat-border-color: #ff6b6b;
+  --cat-title-color: #ff6b6b;
+  --cat-button-bg: #ff6b6b;
+  --cat-button-text: #1a1a1a;
+  --cat-button-hover: #ff8787;
+}
+
+@keyframes shake {
+  0% { transform: translateX(-2px); }
+  100% { transform: translateX(2px); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}

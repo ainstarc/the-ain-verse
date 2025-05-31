@@ -93,42 +93,86 @@
 /* Footer section */
 .repo-footer {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   padding-top: 1rem;
   border-top: 1px solid var(--card-border-color);
-}
-
-/* 60:40 split in footer */
-.repo-meta {
-  width: 60%;
-  color: var(--text-secondary-color);
-  font-size: 0.85rem;
-  display: flex;
-  align-items: center;
   gap: 0.75rem;
 }
 
 .repo-updated {
   font-size: 0.8rem;
+  color: var(--text-secondary-color);
+}
+
+.repo-stats-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.repo-languages {
+  display: flex;
+  gap: 0.5rem;
 }
 
 .language-circle {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 2rem;
-  height: 2rem;
+  width: 1.8rem;
+  height: 1.8rem;
   border-radius: 50%;
   color: white;
-  font-size: 1rem;
+  font-size: 0.9rem;
   border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.language-circle:hover {
+  transform: scale(1.1);
+}
+
+.loading-languages {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--text-secondary-color);
+}
+
+/* Enhanced error styling - Theme Aware */
+.language-error {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--error-text-color, #e74c3c);
+  font-size: 0.8rem;
+  background-color: var(--error-bg-color, rgba(231, 76, 60, 0.1));
+  padding: 0.25rem 0.5rem;
+  border-radius: 1rem;
+  border: 1px solid var(--error-border-color, rgba(231, 76, 60, 0.3));
+  cursor: help;
+}
+
+.language-error svg {
+  font-size: 0.9rem;
+}
+
+/* Light theme error colors */
+[data-theme="light"] .language-error {
+  --error-text-color: #e74c3c;
+  --error-bg-color: rgba(231, 76, 60, 0.1);
+  --error-border-color: rgba(231, 76, 60, 0.3);
+}
+
+/* Dark theme error colors */
+[data-theme="dark"] .language-error {
+  --error-text-color: #ff6b6b;
+  --error-bg-color: rgba(255, 107, 107, 0.2);
+  --error-border-color: rgba(255, 107, 107, 0.4);
 }
 
 /* Circular stats layout */
 .repo-stats {
-  width: 40%;
   display: flex;
-  justify-content: flex-end;
   gap: 0.5rem;
 }
 

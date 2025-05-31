@@ -5,6 +5,7 @@ import RepoList from './components/RepoList'
 import LiveIssues from './components/LiveIssues'
 import Footer from './components/Footer'
 import config from './utils/config'
+import { getRandomCatMessage } from './utils/catMessages'
 import './styles/App.css'
 
 function App() {
@@ -13,6 +14,8 @@ function App() {
   const [filteredRepos, setFilteredRepos] = useState([])
   const [loading, setLoading] = useState(true)
   const [showIssues, setShowIssues] = useState(false)
+  const [apiError, setApiError] = useState(null)
+  const [catMessage, setCatMessage] = useState(getRandomCatMessage())
   
   useEffect(() => {
     // Load theme from localStorage
@@ -36,8 +39,19 @@ function App() {
   const fetchRepos = async () => {
     try {
       setLoading(true)
+      setApiError(null)
       const response = await fetch(config.api.repos(config.githubUsername))
-      if (!response.ok) throw new Error('Failed to fetch repositories')
+      
+      if (!response.ok) {
+        const errorData = await response.json()
+        if (errorData.message && errorData.message.includes("API rate limit exceeded")) {
+          setApiError("rate_limit_exceeded")
+          setCatMessage(getRandomCatMessage())
+        } else {
+          setApiError(`Failed to fetch repositories: ${errorData.message || response.statusText}`)
+        }
+        throw new Error(errorData.message || 'Failed to fetch repositories')
+      }
       
       const data = await response.json()
       setRepos(data)
@@ -93,7 +107,24 @@ function App() {
           />
         </section>
         
-        <RepoList repos={filteredRepos} loading={loading} />
+        {apiError === "rate_limit_exceeded" ? (
+          <div className="api-error-message cat-invasion">
+            <h2>{catMessage.title}</h2>
+            <p>{catMessage.message}</p>
+            <div className="cat-emoji">🐱</div>
+            <button onClick={() => {
+              setCatMessage(getRandomCatMessage());
+              fetchRepos();
+            }}>{catMessage.button}</button>
+          </div>
+        ) : apiError ? (
+          <div className="api-error-message">
+            <p>{apiError}</p>
+            <button onClick={fetchRepos}>Try Again</button>
+          </div>
+        ) : (
+          <RepoList repos={filteredRepos} loading={loading} />
+        )}
       </main>
       
       <LiveIssues show={showIssues} toggleIssuesPanel={toggleIssuesPanel} />

@@ -1,16 +1,14 @@
 /* Import Comfortaa font */
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap");
 
-/* CSS variables are imported in main.jsx */
-
 /* Base styles */
 :root {
-  font-family: 'Comfortaa', system-ui, sans-serif;
+  font-family: "Comfortaa", system-ui, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -30,7 +28,8 @@ body {
   min-height: 100vh;
   background-color: var(--bg-color);
   color: var(--text-color);
-  transition: background-color 0.3s ease, color 0.3s ease, padding-left 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease,
+    padding-left 0.3s ease;
 }
 
 /* Global sidebar adjustments */
@@ -102,7 +101,7 @@ button:focus-visible {
   body.sidebar-active {
     padding-left: 0;
   }
-  
+
   body.sidebar-active header,
   body.sidebar-active .intro,
   body.sidebar-active main,
