@@ -1,70 +1,78 @@
 # 📝 Changelog
 
-Keep track of notable changes and new features here. For detailed future plans and bug tracking, please refer to the [GitHub Issues](https://github.com/ainstarc/the-ain-verse/issues).
+Keep track of notable changes and new features here.  
+For detailed future plans and bug tracking, refer to the [GitHub Issues](https://github.com/ainstarc/the-ain-verse/issues).
 
 ---
 
-### `v0.1.4` – 2025-05-30
+## `v0.4.0` – 2025-05-31
 
-- 📌 Sidebar items now remain fixed correctly during page scroll. (Addresses [#17](https://github.com/your-repo/issues/17), [#23](https://github.com/your-repo/issues/23))
-- 🙌 Contribution by [@Chandanag8197](https://github.com/Chandanag8197)
-- 🛠️ Refactored `repoManager.js` into modular components for improved maintainability:
-  - `pagesPreview.js` – handles GitHub Pages preview modal logic
-  - `repoCard.js` – encapsulates repository card generation
-  - `repoDisplay.js` – manages card rendering
-  - `repoInteractions.js` – handles interactive behaviors
-  - `repoService.js` – fetches and filters GitHub repo data
-- 🐛 Fixed conflicting behavior on repo-card title click (Fixes [#9](https://github.com/your-repo/issues/9)):
-  - Title now **only redirects to the GitHub repo**
-  - Pages preview triggered from non-conflicting parts of the card
+- Transitioned to React v18.2.0
 
 ---
 
-### `v0.1.3` – 2025-05-29
+## `v0.3.1` – 2025-05-30
 
-- 🔍 Added **Issue Search** functionality to the Live Issues sidebar, allowing filtering by keywords and labels.
-- ✨ Introduced an "AI Links" section for quick access to mentioned AI tools.
-- 🎨 Enhanced CSS styling for input field placeholders across the site for improved clarity and user experience.
-- 🎨 Refined UI for the Live Issues sidebar, including toggle button styling for improved visibility and theme consistency.
-- ↔️ Implemented expand/collapse functionality for repository groups within the Live Issues sidebar for better organization.
-- #️⃣ Displayed issue numbers directly on individual issue items in the Live Issues list for easier reference.
-- 📊 Added a search result count display to the Live Issues sidebar, providing clear feedback on filtering.
-
----
-
-### `v0.1.2` – 2025-05-28
-
-- 🔗 Added social media links to the website
-- 🧹 Removed unnecessary package.json and package-lock.json
-- 🙌 Contribution by @hugolopez-online
+- 📌 Fixed: Sidebar items now remain fixed correctly during scroll  
+  _(PR [#23](https://github.com/ainstarc/pull/23), Issue [#17](https://github.com/ainstarc/issues/17))_
+- 🛠️ Refactored `repoManager.js` into modular components for better maintainability  
+  _(PR [#25](https://github.com/ainstarc/pull/25))_
+  - `pagesPreview.js` – GitHub Pages preview modal logic
+  - `repoCard.js` – Repository card generation
+  - `repoDisplay.js` – Card rendering
+  - `repoInteractions.js` – Interactive behaviors
+  - `repoService.js` – Repo fetching and filtering
+- 🐛 Fixed conflicting behavior on repo-card title click: now **only redirects to GitHub**  
+   _(Fixes [#9](https://github.com/ainstarc/issues/9))_
+  🙌 Contribution by [@Chandanag8197](https://github.com/Chandanag8197)
 
 ---
 
-### `v0.1.1` – 2025-05-25
+## `v0.3.0` – 2025-05-29
 
-- 🔍 Added **repo search** functionality
-- 🎧 Refreshed **audio interaction**
-- 🎨 Updated overall **UI and layout**
-- 🌦️ Implemented **weather-aware UI behavior**
-- 🧩 Modularized **JavaScript and CSS** structure
-- 🪝 Introduced **live GitHub Issues sidebar** with toggle
-- ✨ Added smooth entry **animations**
-- 📚 Expanded **documentation and inline comments**
-- 🚀 Set up **GitHub Pages deployment workflow**
-- 🧼 Updated `.gitignore` for cleaner version control
+- 🔍 Enhanced **Live Issues Sidebar**:
+  - Search filter and repository grouping
+  - Result count display
+  - Toggle button styling improved for visibility
+  - Issue count badge on filtered results  
+    _(PR [#13](https://github.com/ainstarc/pull/13), PR [#16](https://github.com/ainstarc/pull/16), Issue [#7](https://github.com/ainstarc/issues/7), [#14](https://github.com/ainstarc/issues/14))_
+- ✨ Added **AI Links** section for quick tool access
+- 🎨 UI refinements for sidebar and placeholders
 
 ---
 
-### `v0.1.0` – 2025-05-24
+## `v0.2.1` – 2025-05-28
 
-- 🚀 Initial release of **`the-ain-verse`**, your centralized portfolio hub
+- 🔗 Added social media links to website header/footer  
+  _(PR [#10](https://github.com/ainstarc/pull/10), Issue [#6](https://github.com/ainstarc/issues/6))_ 🙌 Contribution by [@hugolopez-online](https://github.com/hugolopez-online)
+- 🧹 Removed unused `package.json` and `package-lock.json`  
+  _(PR [#11](https://github.com/ainstarc/pull/11))_
+
+---
+
+## `v0.2.0` – 2025-05-25
+
+- 🔍 Introduced **GitHub Repo Search** functionality
+- 🎧 Updated **audio interaction behavior**
+- 🌦️ Added **weather-aware UI effects**
+- 🧩 Modularized JS and CSS file structure
+- 🪝 Launched **Live GitHub Issues Sidebar** with toggle
+- ✨ Smooth entry **animations** for elements
+- 🎨 Overall UI/UX enhancements
+- 📚 Expanded inline comments and developer docs
+- 🚀 GitHub Pages deployment setup
+- 🧼 Updated `.gitignore` for cleaner source tracking
+
+---
+
+## `v0.1.0` – 2025-05-24
+
+- 🚀 Initial launch of **`the-ain-verse`**
 - 🗂️ Created responsive **repo cards** with:
-  - Live preview in **modal iframe**
-  - Direct links to **GitHub Pages** and **Issue pages**
-- 🐱 Introduced interactive **cat companion**:
-  - Mood-based **CSS styles**
-  - Expanded **sound effect library**
-- 🎛️ Refactored **theme logic** and standardized **icons**
-- 🧱 Set up base project structure, styles, and layout
-
----
+  - Live preview modals
+  - Links to GitHub Pages and Issues
+- 🐱 Introduced **interactive cat companion**:
+  - Mood-reactive CSS themes
+  - Ambient sound effects
+- 🎛️ Standardized theme logic and icons
+- 🧱 Base layout, structure, and design
