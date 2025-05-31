@@ -5,9 +5,23 @@ For detailed future plans and bug tracking, refer to the [GitHub Issues](https:/
 
 ---
 
-## `v0.4.0` – 2025-05-31
+## `v0.4.0` – 2025-05-30
 
-- Transitioned to React v18.2.0
+- 🔄 Complete React rebuild with improved architecture
+- 🎨 Enhanced repository cards with:
+  - Language icons with theme-aware colors
+  - Relative date formatting (Today, Yesterday, etc.)
+  - Direct links to GitHub, Pages, and Issues
+  - Improved layout with adaptive sizing
+- 🔍 Upgraded Live Issues panel:
+  - Sticky repository headers when scrolling
+  - Enhanced search for issues and labels
+  - Collapsible repository sections
+  - Issue labels with original colors
+- ⚙️ Added centralized configuration system
+- 🚀 Implemented GitHub Actions for automated deployment
+- 🌓 Improved theme system with CSS variables
+- 📱 Enhanced responsive design with better grid layouts
 
 ---
 

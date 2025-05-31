@@ -1,61 +1,50 @@
 :root {
-  /* Vibrant & Clean Light Theme */
+  /* Base colors */
   --bg-color: #f8f9fa;
-  --bg-color-alt: #ffffff;
-  --text-color: #212529;
-  --text-color-rgb: 33, 37, 41; /* RGB for #212529 */
-  --card-bg-color: var(--bg-color-alt);
-  --card-bg-color-rgb: 255, 255, 255; /* RGB for #ffffff */
-  --card-border-color: #dee2e6;
-  --link-color: #007bff;
-  --link-color-rgb: 0, 123, 255; /* RGB for #007bff */
-  --link-hover-color: #0056b3;
-  --button-bg-color: var(--link-color);
+  --bg-color-alt: #edf2f7;
+  --text-color: #333333;
+  --text-secondary-color: #666666;
+  --accent-color: #3498db;
+  --accent-color-translucent: rgba(52, 152, 219, 0.2);
+  --accent-hover-color: #2980b9;
+  --link-color: #3498db;
+  --link-hover-color: #2980b9;
   --button-text-color: #ffffff;
-  --button-hover-bg-color: var(--link-hover-color);
-  --topic-bg-color: #e9ecef;
-  --topic-text-color: #495057;
-  --header-bg-color: var(--bg-color-alt);
-  --header-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.075);
-  --card-shadow-hover: 0 6px 12px rgba(0, 0, 0, 0.1);
-  --focus-outline-color: var(--link-color);
-  --accent-color: #00796b;
-  --accent-hover-color: #004d40; /* Darker shade of accent for hover */
-  --accent-color-translucent: rgba(0, 121, 107, 0.3);
-  --text-secondary-color: #55575a;
-  --button-hover-border-color: var(--link-hover-color);
-
-  --cat-mood-angry-color: #d32f2f;
-  --cat-mood-playful-color: #ff9800;
-  --cat-mood-alert-color: #1976d2;
-  --cat-mood-default-color: var(--accent-color);
-  --cat-mood-idle-color: var(--text-secondary-color);
-
+  
+  /* Card styles */
+  --card-bg-color: #ffffff;
+  --card-border-color: #e2e8f0;
+  --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --card-shadow-hover: 0 5px 15px rgba(0, 0, 0, 0.15);
+  
+  /* Header and footer */
+  --header-bg-color: #ffffff;
+  --header-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --footer-bg-color: #ffffff;
+  
+  /* Border radius */
   --border-radius-small: 4px;
   --border-radius-default: 8px;
   --border-radius-large: 12px;
-
-  --live-issues-sidebar-width: 300px; /* Total width of the sidebar when open */
-  --live-issues-tab-width: 36px; /* Slightly reduced width of the clickable tab */
-  --live-issues-sidebar-bg: var(--card-bg-color);
-  --live-issues-sidebar-border-color: var(--card-border-color);
-  --live-issues-sidebar-shadow-color: rgba(0, 0, 0, 0.1);
-  --live-issues-toggle-bg: #ff6b6b; /* Using salmon red for light theme toggle */
-  --live-issues-toggle-text-color: var(
-    --button-text-color
-  ); /* White text for good contrast on dark accent */
-  --live-issues-toggle-bg-hover: #e05a5a; /* Darker salmon red for hover in light theme */
-  --live-issues-toggle-shadow-color: rgba(0, 0, 0, 0.15);
-  --live-issues-item-border-color: var(--card-border-color);
-  --live-issues-title-text-color: var(--text-color);
-  --live-issues-repo-name-text-color: var(--text-secondary-color);
-  --live-issues-label-bg-color: var(--topic-bg-color);
-  --live-issues-label-text-color: var(--topic-text-color);
-  --live-issues-placeholder-text-color: var(
-    --text-secondary-color
-  ); /* For sidebar search placeholder */
-  --live-issues-search-count-text-color: var(
-    --text-color
-  ); /* For sidebar search result count */
+  
+  /* Live issues sidebar */
+  --live-issues-sidebar-width: 350px;
+  --live-issues-tab-width: 40px;
+  --live-issues-sidebar-bg: #ffffff;
+  --live-issues-sidebar-shadow-color: rgba(0, 0, 0, 0.2);
+  --live-issues-toggle-bg: #3498db;
+  --live-issues-toggle-bg-hover: #2980b9;
+  --live-issues-toggle-text-color: #ffffff;
+  --live-issues-toggle-shadow-color: rgba(0, 0, 0, 0.2);
+  --live-issues-title-text-color: #333333;
+  --live-issues-repo-name-text-color: #666666;
+  --live-issues-item-border-color: #e2e8f0;
+  --live-issues-search-count-text-color: #666666;
+  --live-issues-label-bg-color: #e2e8f0;
+  --live-issues-label-text-color: #333333;
+  
+  /* Cat mood colors */
+  --cat-mood-default-color: #333333;
+  --cat-mood-playful-color: #3498db;
+  --cat-mood-angry-color: #e74c3c;
 }

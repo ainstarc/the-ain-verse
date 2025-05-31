@@ -1,7 +1,7 @@
 .intro {
   max-width: 800px;
   margin: 2rem auto;
-  padding: 1.5rem;
+  padding: 1.25rem;
   background-color: var(--card-bg-color);
   border-radius: var(--border-radius-large);
   box-shadow: var(--card-shadow);
@@ -29,11 +29,16 @@
 
 #cat-call {
   font-style: italic;
+  font-weight: bold;
   cursor: pointer;
   user-select: none;
   color: var(--cat-mood-default-color);
   transition: transform 0.2s ease, color 0.2s ease;
   display: inline-block;
+  padding: 0 0.5rem;
+  position: relative;
+  z-index: 1;
+  letter-spacing: 1px;
 }
 
 #cat-call:hover {
