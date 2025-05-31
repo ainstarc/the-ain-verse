@@ -1,0 +1,29 @@
+.repo-list-container {
+  width: 100%;
+}
+
+.repo-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.loading, .no-repos {
+  text-align: center;
+  padding: 2rem;
+  font-style: italic;
+  color: var(--text-secondary-color);
+}
+
+@media (min-width: 768px) {
+  .repo-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .repo-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

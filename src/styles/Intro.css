@@ -1,0 +1,58 @@
+.intro {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1.25rem;
+  background-color: var(--card-bg-color);
+  border-radius: var(--border-radius-large);
+  box-shadow: var(--card-shadow);
+  line-height: 1.6;
+}
+
+.intro p {
+  margin-bottom: 1rem;
+}
+
+.intro p:last-child {
+  margin-bottom: 0;
+}
+
+.ai-links {
+  margin: 0 0.25rem;
+  color: var(--accent-color);
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.ai-links:hover {
+  color: var(--link-hover-color);
+}
+
+#cat-call {
+  font-style: italic;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+  color: var(--cat-mood-default-color);
+  transition: transform 0.2s ease, color 0.2s ease;
+  display: inline-block;
+  padding: 0 0.5rem;
+  position: relative;
+  z-index: 1;
+  letter-spacing: 1px;
+}
+
+#cat-call:hover {
+  transform: scale(1.1);
+  color: var(--cat-mood-playful-color);
+}
+
+#cat-mood-indicator {
+  margin-left: 0.5rem;
+  font-size: 1.2rem;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+#cat-mood-indicator:hover {
+  transform: rotate(15deg);
+}

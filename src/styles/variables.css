@@ -1,0 +1,50 @@
+:root {
+  /* Base colors */
+  --bg-color: #f8f9fa;
+  --bg-color-alt: #edf2f7;
+  --text-color: #333333;
+  --text-secondary-color: #666666;
+  --accent-color: #3498db;
+  --accent-color-translucent: rgba(52, 152, 219, 0.2);
+  --accent-hover-color: #2980b9;
+  --link-color: #3498db;
+  --link-hover-color: #2980b9;
+  --button-text-color: #ffffff;
+  
+  /* Card styles */
+  --card-bg-color: #ffffff;
+  --card-border-color: #e2e8f0;
+  --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --card-shadow-hover: 0 5px 15px rgba(0, 0, 0, 0.15);
+  
+  /* Header and footer */
+  --header-bg-color: #ffffff;
+  --header-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --footer-bg-color: #ffffff;
+  
+  /* Border radius */
+  --border-radius-small: 4px;
+  --border-radius-default: 8px;
+  --border-radius-large: 12px;
+  
+  /* Live issues sidebar */
+  --live-issues-sidebar-width: 350px;
+  --live-issues-tab-width: 40px;
+  --live-issues-sidebar-bg: #ffffff;
+  --live-issues-sidebar-shadow-color: rgba(0, 0, 0, 0.2);
+  --live-issues-toggle-bg: #3498db;
+  --live-issues-toggle-bg-hover: #2980b9;
+  --live-issues-toggle-text-color: #ffffff;
+  --live-issues-toggle-shadow-color: rgba(0, 0, 0, 0.2);
+  --live-issues-title-text-color: #333333;
+  --live-issues-repo-name-text-color: #666666;
+  --live-issues-item-border-color: #e2e8f0;
+  --live-issues-search-count-text-color: #666666;
+  --live-issues-label-bg-color: #e2e8f0;
+  --live-issues-label-text-color: #333333;
+  
+  /* Cat mood colors */
+  --cat-mood-default-color: #333333;
+  --cat-mood-playful-color: #3498db;
+  --cat-mood-angry-color: #e74c3c;
+}

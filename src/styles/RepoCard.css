@@ -1,0 +1,202 @@
+.repo-card {
+  background-color: var(--card-bg-color);
+  border-radius: var(--border-radius-default);
+  border: 1px solid var(--card-border-color);
+  padding: 1.25rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.repo-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+/* Header section */
+.repo-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+/* 60:40 split in header */
+.repo-name {
+  margin: 0;
+  color: var(--accent-color);
+  font-size: 1.2rem;
+  word-break: break-word;
+  width: 60%;
+  padding-right: 0.5rem;
+}
+
+.repo-links {
+  display: flex;
+  gap: 0.5rem;
+  width: 40%;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.repo-icon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 50%;
+  background-color: var(--bg-color-alt);
+  color: var(--accent-color);
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  border: 1px solid var(--card-border-color);
+}
+
+.repo-icon-link:hover {
+  transform: scale(1.1);
+  background-color: var(--accent-color);
+  color: var(--button-text-color);
+}
+
+.repo-icon-link:nth-child(1):hover {
+  background-color: #333;
+}
+
+.repo-icon-link:nth-child(2):hover {
+  background-color: var(--link-color);
+}
+
+.repo-icon-link:nth-child(3):hover {
+  background-color: #e74c3c;
+}
+
+/* Description section */
+.repo-description {
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+  color: var(--text-color);
+  line-height: 1.4;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
+
+/* Smaller font for long descriptions */
+.repo-description.long-text {
+  font-size: 0.85rem;
+  line-height: 1.35;
+  -webkit-line-clamp: 6;
+}
+
+/* Footer section */
+.repo-footer {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+  border-top: 1px solid var(--card-border-color);
+  gap: 0.75rem;
+}
+
+.repo-updated {
+  font-size: 0.8rem;
+  color: var(--text-secondary-color);
+}
+
+.repo-stats-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.repo-languages {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.language-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 50%;
+  color: white;
+  font-size: 0.9rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.language-circle:hover {
+  transform: scale(1.1);
+}
+
+.loading-languages {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--text-secondary-color);
+}
+
+/* Enhanced error styling - Theme Aware */
+.language-error {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--error-text-color, #e74c3c);
+  font-size: 0.8rem;
+  background-color: var(--error-bg-color, rgba(231, 76, 60, 0.1));
+  padding: 0.25rem 0.5rem;
+  border-radius: 1rem;
+  border: 1px solid var(--error-border-color, rgba(231, 76, 60, 0.3));
+  cursor: help;
+}
+
+.language-error svg {
+  font-size: 0.9rem;
+}
+
+/* Light theme error colors */
+[data-theme="light"] .language-error {
+  --error-text-color: #e74c3c;
+  --error-bg-color: rgba(231, 76, 60, 0.1);
+  --error-border-color: rgba(231, 76, 60, 0.3);
+}
+
+/* Dark theme error colors */
+[data-theme="dark"] .language-error {
+  --error-text-color: #ff6b6b;
+  --error-bg-color: rgba(255, 107, 107, 0.2);
+  --error-border-color: rgba(255, 107, 107, 0.4);
+}
+
+/* Circular stats layout */
+.repo-stats {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.repo-stat {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  background-color: var(--bg-color-alt);
+  color: var(--text-secondary-color);
+  font-size: 0.75rem;
+  border: 1px solid var(--card-border-color);
+  transition: all 0.2s ease;
+}
+
+.repo-stat:hover {
+  transform: scale(1.1);
+  background-color: var(--accent-color-translucent);
+}
+
+.repo-stat svg {
+  font-size: 0.9rem;
+  margin-bottom: 0.1rem;
+}
