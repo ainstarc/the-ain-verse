@@ -1,0 +1,44 @@
+footer {
+  background-color: var(--card-bg-color);
+  padding: 1.5rem;
+  text-align: center;
+  margin-top: 2rem;
+  box-shadow: var(--header-shadow);
+  transition: margin-left 0.3s ease, width 0.3s ease;
+}
+
+footer p {
+  margin-bottom: 0.5rem;
+}
+
+footer p:last-child {
+  margin-bottom: 0;
+}
+
+.footer-icon {
+  vertical-align: middle;
+  margin: 0 0.25rem;
+}
+
+.heart {
+  color: #e74c3c;
+}
+
+.folder-icon {
+  display: inline-block;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Mobile styles are now in index.css */

@@ -1,0 +1,44 @@
+/* App container styles */
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  transition: margin-left 0.3s ease, width 0.3s ease;
+}
+
+.status {
+  text-align: center;
+  padding: 1rem;
+  font-style: italic;
+  color: var(--text-secondary-color);
+}
+
+.repo-controls {
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+#repo-search-input {
+  width: 100%;
+  max-width: 500px;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--card-border-color);
+  border-radius: var(--border-radius-default);
+  background-color: var(--card-bg-color);
+  color: var(--text-color);
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+#repo-search-input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+/* Live issues toggle button is now in LiveIssues.css */
+
+/* Mobile styles are now in index.css */
