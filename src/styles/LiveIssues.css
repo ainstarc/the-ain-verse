@@ -147,7 +147,8 @@
   color: var(--live-issues-label-text-color);
 }
 
-.loading-issues, .no-issues {
+.loading-issues,
+.no-issues {
   padding: 1rem;
   text-align: center;
   color: var(--text-secondary-color);
@@ -200,7 +201,13 @@
 
 @media (max-width: 600px) {
   .live-issues-sidebar {
-    width: 100%;
+    width: var(--live-issues-sidebar-mobile-width);
     left: -100%;
+  }
+
+  .live-issues-sidebar.active + #live-issues-toggle {
+    left: var(--live-issues-sidebar-mobile-width);
+    transform: translateX(-100%);
+    z-index: 1001;
   }
 }
