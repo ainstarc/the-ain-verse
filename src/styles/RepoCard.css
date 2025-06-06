@@ -79,7 +79,7 @@
   line-height: 1.4;
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 5;
+  line-clamp: 5;
   -webkit-box-orient: vertical;
 }
 
@@ -87,7 +87,7 @@
 .repo-description.long-text {
   font-size: 0.85rem;
   line-height: 1.35;
-  -webkit-line-clamp: 6;
+  line-clamp: 6;
 }
 
 /* Footer section */
