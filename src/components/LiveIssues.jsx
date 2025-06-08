@@ -28,10 +28,10 @@ const LiveIssues = ({ show, toggleIssuesPanel }) => {
 
       const data = await response.json();
       setIssues(data.items || []);
-      
+
       // Initialize all repos as expanded
       const repos = {};
-      data.items?.forEach(issue => {
+      data.items?.forEach((issue) => {
         const repoName = getRepoName(issue);
         repos[repoName] = true;
       });
@@ -50,20 +50,21 @@ const LiveIssues = ({ show, toggleIssuesPanel }) => {
     }
 
     const searchLower = searchTerm.toLowerCase();
-    
-    const filtered = issues.filter(issue => {
+
+    const filtered = issues.filter((issue) => {
       // Always check labels (without requiring label: prefix)
-      const matchesLabel = issue.labels?.some(label => 
+      const matchesLabel = issue.labels?.some((label) =>
         label.name.toLowerCase().includes(searchLower)
       );
-      
+
       // Also check title and body
       const matchesTitle = issue.title.toLowerCase().includes(searchLower);
-      const matchesBody = issue.body && issue.body.toLowerCase().includes(searchLower);
-      
+      const matchesBody =
+        issue.body && issue.body.toLowerCase().includes(searchLower);
+
       return matchesLabel || matchesTitle || matchesBody;
     });
-    
+
     setFilteredIssues(filtered);
   };
 
@@ -72,9 +73,9 @@ const LiveIssues = ({ show, toggleIssuesPanel }) => {
   };
 
   const toggleRepoExpand = (repoName) => {
-    setExpandedRepos(prev => ({
+    setExpandedRepos((prev) => ({
       ...prev,
-      [repoName]: !prev[repoName]
+      [repoName]: !prev[repoName],
     }));
   };
 
@@ -90,15 +91,15 @@ const LiveIssues = ({ show, toggleIssuesPanel }) => {
   // Group issues by repository
   const groupIssuesByRepo = (issues) => {
     const grouped = {};
-    
-    issues.forEach(issue => {
+
+    issues.forEach((issue) => {
       const repoName = getRepoName(issue);
       if (!grouped[repoName]) {
         grouped[repoName] = [];
       }
       grouped[repoName].push(issue);
     });
-    
+
     return grouped;
   };
 
@@ -123,28 +124,40 @@ const LiveIssues = ({ show, toggleIssuesPanel }) => {
             onChange={(e) => setSearchTerm(e.target.value)}
             aria-label="Search issues"
           />
-          {searchTerm && (
-            <div className="live-issues-search-count">
-              Found {filteredIssues.length} {filteredIssues.length === 1 ? 'issue' : 'issues'}
-            </div>
-          )}
+          <div className="live-issues-search-count">
+            {searchTerm ? (
+              <>
+                Found {filteredIssues.length} of {issues.length}{" "}
+                {issues.length === 1 ? "issue" : "issues"}
+              </>
+            ) : (
+              <>
+                Total: {issues.length}{" "}
+                {issues.length === 1 ? "issue" : "issues"}
+              </>
+            )}
+          </div>
         </div>
-        
+
         <div className="live-issues-scrollable">
           {loading ? (
             <div className="loading-issues">Loading issues...</div>
           ) : filteredIssues.length > 0 ? (
             Object.entries(groupedIssues).map(([repoName, repoIssues]) => (
               <div key={repoName} className="repo-group">
-                <div 
+                <div
                   className="repo-group-header"
                   onClick={() => toggleRepoExpand(repoName)}
                 >
-                  {expandedRepos[repoName] ? <FaChevronDown /> : <FaChevronRight />}
+                  {expandedRepos[repoName] ? (
+                    <FaChevronDown />
+                  ) : (
+                    <FaChevronRight />
+                  )}
                   {repoName}
                   <span className="issue-count">{repoIssues.length}</span>
                 </div>
-                
+
                 {expandedRepos[repoName] && (
                   <ul className="repo-group-issues">
                     {repoIssues.map((issue) => (
@@ -156,19 +169,24 @@ const LiveIssues = ({ show, toggleIssuesPanel }) => {
                           className="issue-link"
                         >
                           <div className="issue-title">
-                            <span className="issue-number">#{issue.number}</span>
+                            <span className="issue-number">
+                              #{issue.number}
+                            </span>
                             {issue.title}
                           </div>
-                          
+
                           {issue.labels && issue.labels.length > 0 && (
                             <div className="issue-labels">
-                              {issue.labels.map(label => (
-                                <span 
-                                  key={label.id} 
+                              {issue.labels.map((label) => (
+                                <span
+                                  key={label.id}
                                   className="issue-label"
                                   style={{
                                     backgroundColor: `#${label.color}`,
-                                    color: parseInt(label.color, 16) > 0xffffff / 2 ? '#000' : '#fff'
+                                    color:
+                                      parseInt(label.color, 16) > 0xffffff / 2
+                                        ? "#000"
+                                        : "#fff",
                                   }}
                                 >
                                   {label.name}
@@ -176,7 +194,7 @@ const LiveIssues = ({ show, toggleIssuesPanel }) => {
                               ))}
                             </div>
                           )}
-                          
+
                           <div className="issue-meta">
                             <span className="issue-date">
                               Updated: {formatDate(issue.updated_at)}
@@ -196,7 +214,7 @@ const LiveIssues = ({ show, toggleIssuesPanel }) => {
           )}
         </div>
       </aside>
-      
+
       <button
         id="live-issues-toggle"
         aria-expanded={show}
