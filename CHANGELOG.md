@@ -1,7 +1,19 @@
-# 📝 Changelog
+# 📝 CHANGELOG
 
 Keep track of notable changes and new features here.  
 For detailed future plans and bug tracking, refer to the [GitHub Issues](https://github.com/ainstarc/the-ain-verse/issues).
+
+---
+
+## `v0.4.1` - 2025-06-08
+
+- fix: issue panel not closable
+  _(PR [#30](https://github.com/ainstarc/the-ain-verse/pull/30), Issue [#29](https://github.com/ainstarc/the-ain-verse/issues/29))_
+- 🙌 Contribution by [@leeza05](https://github.com/leeza05)
+  - Add total issue count display beside search bar
+    _(PR [#33](https://github.com/ainstarc/the-ain-verse/pull/33), Issue [#32](https://github.com/ainstarc/the-ain-verse/issues/32))_
+  - fix: social icon alignment
+    _(PR [#34](https://github.com/ainstarc/the-ain-verse/pull/34), Issue [#12](https://github.com/ainstarc/the-ain-verse/issues/12))_
 
 ---
 

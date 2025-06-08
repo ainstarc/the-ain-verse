@@ -1,7 +1,7 @@
 {
   "name": "the-ain-verse",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.4.1",
   "type": "module",
   "homepage": "https://ainstarc.github.io/the-ain-verse",
   "scripts": {
